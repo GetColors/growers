@@ -1,7 +1,16 @@
 <template>
-    <div id="container">
-        <h3>Landing page</h3>
-        <LinkButton color="white" path="/login" text="Go to login"/>
+    <div class="container" id="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div id="auth-container">
+                    <LinkButton path="login" color="blue" text="Inicio de sesión"/>
+                        <span> o </span>
+                    <LinkButton path="register" color="white" text="Registro"/>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
     </div>
 </template>
 
@@ -18,9 +27,18 @@
 
 <style scoped>
     #container{
-        width: 90%;
-        border: 1px #d0d0d0 solid;
+        height: 100%;
+    }
+    #auth-container{
+        text-align: center;
+        border: 1px lightgray solid;
+        border-radius: 15px;
+        width: 200px;
         margin-left: auto;
         margin-right: auto;
+        height: 300px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        margin-top: 50%;
     }
 </style>

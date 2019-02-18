@@ -2,8 +2,8 @@ import VueRouter from 'vue-router';
 
 import PageNotFound from "../views/PageNotFound";
 import LandingPage from "../views/LandingPage";
-import LoginPage from "../views/LoginPage";
-import RegisterPage from "../views/RegisterPage";
+import LoginPage from "../views/login-page/LoginPage";
+import RegisterPage from "../views/register-page/RegisterPage";
 import HomePage from "../views/HomePage";
 
 const routes = [
@@ -23,7 +23,7 @@ const routes = [
         component: LoginPage
     },
     {
-        path: '/registro/',
+        path: '/register/',
         name: 'register',
         component: RegisterPage
     },

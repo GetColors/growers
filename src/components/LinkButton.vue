@@ -19,7 +19,7 @@
 
 <style scoped>
     button{
-        width: 150px;
+        min-width: 150px;
         height: 30px;
         border: none;
         border-radius: 15px;
