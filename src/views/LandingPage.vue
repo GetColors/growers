@@ -15,14 +15,14 @@
 </template>
 
 <script>
-    import LinkButton from "../components/LinkButton";
+import LinkButton from '../components/LinkButton.vue';
 
-    export default {
-        name: "LandingPage",
-        components:{
-            LinkButton
-        }
-    }
+export default {
+  name: 'LandingPage',
+  components: {
+    LinkButton,
+  },
+};
 </script>
 
 <style scoped>

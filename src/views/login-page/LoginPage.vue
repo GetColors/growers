@@ -13,46 +13,41 @@
 
 <script>
 
-    import authenticateUserService from "../../services/authenticateUserService";
+import authenticateUserService from '../../services/authenticateUserService';
 
-    export default {
-        name: "LoginPage",
-        data: function () {
-            return {
-                username: '',
-                password: ''
-            };
-        },
-        methods:{
-            onSubmit () {
+export default {
+  name: 'LoginPage',
+  data() {
+    return {
+      username: '',
+      password: '',
+    };
+  },
+  methods: {
+    onSubmit() {
+      if (this.isValid()) {
+        authenticateUserService(this.username, this.password)
+          .then((response) => {
+            localStorage.setItem('token', response.data.data);
+            this.$router.push('home');
+          }, (error) => {
+            alert(error);
+          });
+      } else {
+        alert('Debes llenar los campos correctamente.');
+      }
+    },
+    isValid() {
+      let isValid = true;
 
-                if (this.isValid()){
+      if (this.email === '' || this.password === '') {
+        isValid = false;
+      }
 
-                    authenticateUserService(this.username, this.password)
-                        .then((response) => {
-                            localStorage.setItem('token', response.data.data);
-                            this.$router.push('home');
-                        }, (error) => {
-                            alert(error);
-                        });
-
-                }else {
-                    alert("Debes llenar los campos correctamente.");
-                }
-
-            },
-            isValid(){
-
-                let isValid = true;
-
-                if (this.email === '' || this.password === '') {
-                    isValid = false;
-                }
-
-                return isValid;
-            }
-        }
-    }
+      return isValid;
+    },
+  },
+};
 </script>
 
 <style scoped>

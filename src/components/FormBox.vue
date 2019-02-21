@@ -5,12 +5,12 @@
 </template>
 
 <script>
-    export default {
-        name: "FormBox",
-        props:{
-            child: String
-        }
-    }
+export default {
+  name: 'FormBox',
+  props: {
+    child: String,
+  },
+};
 </script>
 
 <style scoped>

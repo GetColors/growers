@@ -11,24 +11,32 @@
 </template>
 
 <script>
-    export default {
-        name: "BasicInput",
-        props:{
-            type: String,
-            placeholder: String
-        },
-        data: function () {
-            return {
-                errors:[
-                ]
-            }
-        },
-        methods: {
-            onWrite: function (event) {
-                console.log(event.target.value);
-            },
-        }
-    }
+export default {
+  name: 'BasicInput',
+  props: {
+    type: String,
+    placeholder: String,
+  },
+  data() {
+    return {
+      errors: [
+      ],
+    };
+  },
+  methods: {
+    validate(event) {
+      const value = event.target.value;
+
+      let isValid = true;
+
+      if (value === '') {
+        isValid = false;
+      }
+
+      this.$emit('validated', isValid);
+    },
+  },
+};
 </script>
 
 <style scoped>

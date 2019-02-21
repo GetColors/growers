@@ -11,14 +11,14 @@
 </template>
 
 <script>
-    import BasicInput from "../../components/BasicInput";
+import BasicInput from '../../components/BasicInput.vue';
 
-    export default {
-        name: "RegisterForm",
-        components: {
-            BasicInput
-        }
-    }
+export default {
+  name: 'RegisterForm',
+  components: {
+    BasicInput,
+  },
+};
 </script>
 
 <style scoped>

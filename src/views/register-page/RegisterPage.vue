@@ -3,10 +3,11 @@
         <div id="form-box">
             <h3>Registrate</h3>
             <form >
+                <basic-input type="text" v-on:validated="isValid"  placeholder="test"/>
                 <input type="text" class="input" v-model="username" placeholder="Nombre de usuario">
                 <input type="email" class="input" v-model="email" placeholder="Correo elecrónico">
                 <input type="password" class="input" v-model="password" placeholder="Contraseña">
-                <button v-on:click="onSubmit" class="btn btn-success">Registrarme</button>
+                <button v-on:click="onSubmit" :disabled="!unlockButton" class="btn btn-success">Registrarme</button>
             </form>
         </div>
     </div>
@@ -14,14 +15,19 @@
 
 <script>
     import registerUserService from "../../services/registerUserService";
+    import BasicInput from "../../components/BasicInput";
 
     export default {
         name: "RegisterPage",
+        components:{
+            BasicInput
+        },
         data: function () {
             return {
                 username: '',
                 email: '',
-                password: ''
+                password: '',
+                unlockButton: false
             };
         },
         methods:{
@@ -41,16 +47,11 @@
                 }
 
             },
-            isValid(){
+            isValid(event){
+                console.log(event);
+                this.unlockButton = event;
 
-                let isValid = true;
-
-                if (this.username === '' || this.email === '' || this.password === '') {
-                    isValid = false;
-                }
-
-                return isValid;
-            }
+            },
         }
     }
 </script>

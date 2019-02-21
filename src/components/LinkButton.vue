@@ -7,14 +7,14 @@
 </template>
 
 <script>
-    export default {
-        name: "LinkButton",
-        props:{
-            path: String,
-            text: String,
-            color: String
-        }
-    }
+export default {
+  name: 'LinkButton',
+  props: {
+    path: String,
+    text: String,
+    color: String,
+  },
+};
 </script>
 
 <style scoped>
