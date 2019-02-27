@@ -28,7 +28,7 @@ export default {
       if (this.isValid()) {
         authenticateUserService(this.username, this.password)
           .then((response) => {
-            localStorage.setItem('token', response.data.data);
+            localStorage.setItem('token', response.data.data.token);
             this.$router.push('home');
           }, (error) => {
             alert(error);

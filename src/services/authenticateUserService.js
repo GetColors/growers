@@ -8,7 +8,7 @@ const authenticateUserService = async (username, password) => {
     password,
   };
 
-  return await axios.post(endpoint, body);
+  return axios.post(endpoint, body);
 };
 
 export default authenticateUserService;

@@ -9,7 +9,7 @@ const registerUserService = async (username, email, password) => {
     password,
   };
 
-  return await axios.post(endpoint, body);
+  return axios.post(endpoint, body);
 };
 
 export default registerUserService;

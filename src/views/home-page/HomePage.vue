@@ -7,23 +7,27 @@
                 v-on:keyup="validate"
         >
         <button v-on:click="addCrop" :disabled="disable">Agregar</button>
-        <div v-for="crop in crops" class="crop-container">
-            <span>{{crop.title}}</span>
-        </div>
+        <crop-list :crops="crops"/>
     </div>
 </template>
 
 <script>
+import CropList from './CropList.vue';
+import getUserCropsService from '../../services/getUserCropsService';
+
 export default {
   name: 'HomePage',
+  components: {
+    CropList,
+  },
   data() {
     return {
       disable: true,
       title: '',
-      crops: Array,
+      crops: [],
     };
   },
-  created() {
+  mounted() {
     this.showCrops();
   },
   methods: {
@@ -41,11 +45,12 @@ export default {
       }
     },
     showCrops() {
-      this.crops = [
-        {
-          tittle: 'crop1',
-        },
-      ];
+      getUserCropsService(localStorage.getItem('token'))
+        .then((response) => {
+          this.crops = response.data.data;
+        }, (error) => {
+          console.log(error);
+        });
     },
   },
 };

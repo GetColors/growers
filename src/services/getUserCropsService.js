@@ -10,7 +10,7 @@ const getUserCropsService = async (token) => {
     },
   };
 
-  return await axios.get(endpoint, config);
+  return axios.get(endpoint, config);
 };
 
 export default getUserCropsService;
