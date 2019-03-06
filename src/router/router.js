@@ -1,6 +1,6 @@
 import VueRouter from 'vue-router';
 
-import PageNotFound from '../views/PageNotFound.vue';
+import PageNotFound from '../views/page-not-found/PageNotFound.vue';
 import HomePage from '../views/home/HomePage.vue';
 
 const routes = [
