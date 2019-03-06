@@ -14,4 +14,4 @@ FROM nginx:1.14-alpine
 
 COPY --from=build /usr/src/app/dist/ /usr/share/nginx/html
 
-COPY ./www/nxinx.config /etc/nginx/conf.d/default.conf
+COPY www/nginx.config /etc/nginx/conf.d/default.conf

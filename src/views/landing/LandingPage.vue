@@ -1,15 +1,12 @@
 <template>
-    <div id="form-box">
-        {{child}}
+    <div>
+        Yoi!
     </div>
 </template>
 
 <script>
 export default {
-  name: 'FormBox',
-  props: {
-    child: String,
-  },
+  name: 'LandingPage',
 };
 </script>
 
