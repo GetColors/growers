@@ -1,7 +1,7 @@
 <template>
     <div>
-        <LandingPage v-if="false"/>
-        <DashboardPage v-if="true"/>
+        <LandingPage v-if="true"/>
+        <DashboardPage v-if="false"/>
     </div>
 </template>
 
